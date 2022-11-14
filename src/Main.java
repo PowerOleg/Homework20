@@ -2,7 +2,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeSet;
-
 public class Main {
     public static void main(String[] args) {
         Person<String> person1 = new Person("Roland", "Salimr Ibn Sali Barad", 60);
@@ -37,7 +36,6 @@ class PersonComparator implements Comparator<Person<String>> {
         return Integer.compare(s1, s2) * -1;
     }
 }
-
 class PersonComparator2 implements Comparator<Person> {
     @Override
     public int compare(Person o1, Person o2) {
