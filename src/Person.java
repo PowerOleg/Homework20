@@ -1,28 +1,28 @@
 
-public class Person {
-    private String name;
-    private String surname;
+public class Person<T> {
+    private T name;
+    private T surname;
     private int age;
 
-    public Person(String name, String surname, int age) {
+    public Person(T name, T surname, int age) {
         this.name = name;
         this.surname = surname;
         this.age = age;
     }
 
-    public String getName() {
+    public T getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(T name) {
         this.name = name;
     }
 
-    public String getSurname() {
+    public T getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
+    public void setSurname(T surname) {
         this.surname = surname;
     }
 
