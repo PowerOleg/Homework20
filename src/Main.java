@@ -4,10 +4,10 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class Main {
-
     public static Set<Person> fillCollection() {
         Set<Person> set = new TreeSet<>();
         set.add(new Person("Alena", "Veselovskih", 25));
+        set.add(new Person("Kenny", "West", 10));
         set.add(new Person("Roman", "Genry Robertson", 100));
         set.add(new Person("Oleg", "Veselovskih ", 110));
         set.add(new Person("Roland", "Salimr Ibn Sali Barad", 60));
@@ -21,19 +21,24 @@ public class Main {
             System.out.println(p);
         }
     }
+
     public static void main(String[] args) {
         PersonComparator personComparator = new PersonComparator(2);
         Set<Person> set = new TreeSet<>(personComparator);
         set.addAll(fillCollection());
+
+        set.removeIf(n -> n.getAge() < 18);
         print(set);
     }
 }
 
 class PersonComparator implements Comparator<Person> {
     int maxSurnameWords;
+
     public PersonComparator(int maxSurnameWords) {
         this.maxSurnameWords = maxSurnameWords;
     }
+
     @Override
     public int compare(Person o1, Person o2) {
         String[] surnames1 = o1.getSurname().split(" ");
