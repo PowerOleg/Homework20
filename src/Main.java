@@ -14,7 +14,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        Set<Person> set = new TreeSet<>(Comparator.comparing(Person::getAge));
+        Set<Person> set = new TreeSet<>(Comparator.comparing(Person::getAge).reversed());
         set.add(new Person("Alena", "Veselovskih", 25));
         set.add(new Person("Roman", "Genry Robertson", 100));
         set.add(new Person("Oleg", "Veselovskih ", 110));
